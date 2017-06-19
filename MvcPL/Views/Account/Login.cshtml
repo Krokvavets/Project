@@ -1,0 +1,61 @@
+﻿@model MvcPL.Models.LogOnViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Forum</title>
+    <!-- Bootstrap CSS -->
+    <link href="~/Style/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="~/Style/bootstrap-theme.css" rel="stylesheet">
+    <!-- external css -->
+    <!-- font icon -->
+    <link href="~/Style/elegant-icons-style.css" rel="stylesheet" />
+    <link href="~/Style/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Style/line-icons.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="~/Style/style.css" rel="stylesheet">
+    <link href="~/Style/style-responsive.css" rel="stylesheet" />
+    <!-- jquery-->
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+</head>
+@{
+    ViewBag.Title = "Login";
+}
+Html.EnableClientValidation(true);
+Html.EnableUnobtrusiveJavaScript(true);
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-form", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+
+            <div class="login-wrap">
+                <p class="login-img"><i class="icon_lock_alt"></i></p>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="icon_profile"></i></span>
+                   @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Username" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Password" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+                <label class="checkbox">
+                    <input type="checkbox" value="remember-me"> Remember me
+                    @Html.EditorFor(model => model.RememberMe)
+                    @Html.ValidationMessageFor(model => model.RememberMe, "", new { @class = "text-danger" })
+                </label>
+                <button class="btn btn-primary btn-lg btn-block" type="submit" value="Login">Login</button>
+            </div>
+    </div>
+        <p>
+            @Html.ActionLink("Register", "Register")
+        </p>
+}
+
+</html>

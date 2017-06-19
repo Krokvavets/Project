@@ -1,0 +1,66 @@
+﻿#Registr {
+    margin-left :30%;
+    margin-bottom : 12%;
+}
+#Registrh4 {
+    margin-left: 30%;
+    font-style:italic;
+    font-weight:bold;
+}
+#form{
+    margin-top : 10%;
+}
+#Editform {
+    padding-top : 10%;
+    margin-left : 10%;
+}
+#edit {
+    width:30%;
+    margin-left: 60%;
+    margin-top: 5%
+}
+.box{
+    margin-right: 50%;
+    width: 60%;
+}
+.bigbox {
+    width: 60%;
+    padding-top: 3%;
+    padding-bottom: 20%;    
+}
+td {
+    padding: 5px;
+    border-bottom: 1px solid black; 
+}
+.role {
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+#getSection{
+    margin-left: 10%;
+}
+.del {
+    margin-left: 5%;
+}
+.section{
+    width:100%;
+    padding: 0.5%;
+    margin-top: 5%;
+    background-color:lightsteelblue;
+
+}
+.psect {
+    position: relative;
+    font-weight: bold;
+    font-size: larger;
+}
+#h {
+margin-top: 10%;
+}
+#textp{
+    margin-bottom: 2%;
+}
+.creare{
+    margin-top:6%;
+}
+

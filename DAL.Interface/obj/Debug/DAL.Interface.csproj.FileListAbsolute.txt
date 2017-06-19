@@ -1,0 +1,5 @@
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL.Interface\bin\Debug\DAL.Interface.dll
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL.Interface\bin\Debug\DAL.Interface.pdb
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL.Interface\obj\Debug\DAL.Interface.csprojResolveAssemblyReference.cache
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL.Interface\obj\Debug\DAL.Interface.dll
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL.Interface\obj\Debug\DAL.Interface.pdb

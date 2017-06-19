@@ -1,0 +1,83 @@
+﻿@model List<MvcPL.Models.MessageViewModel>
+
+@{
+    ViewBag.Title = "Topic";
+}
+<html>
+<head>
+    <link href="~/Style/StyleSheet.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Forum</title>
+    <!-- Bootstrap CSS -->
+    <link href="~/Style/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Style/bootstrap-theme.css" rel="stylesheet" />
+    <!-- bootstrap theme -->
+    <link href="~/Style/bootstrap-theme.css" rel="stylesheet">
+    <!-- external css -->
+    <!-- font icon -->
+    <link href="~/Style/elegant-icons-style.css" rel="stylesheet" />
+    <link href="~/Style/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Style/line-icons.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="~/Style/style.css" rel="stylesheet">
+    <link href="~/Style/style-responsive.css" rel="stylesheet" />
+    <link href="~/Style/StyleSheet.css" rel="stylesheet" />
+    <link href="~/Style/styles.css" rel="stylesheet" />
+    <!-- jquery-->
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/messageCreater.js"></script>
+    <script src="~/Scripts/script.js"></script>
+</head>
+<body id="results">
+
+    <script type="text/javascript">
+        var pager = new Imtech.Pager();
+        $(document).ready(function () {
+            pager.paragraphsPerPage = 5;
+            pager.pagingContainer = $('#content');
+            pager.paragraphs = $('tr.z', pager.pagingContainer);
+            pager.showPage(1);
+        });
+    </script> 
+    <h2 id="h">@ViewData["Name"]</h2>
+    <div id="main">
+        <table  id="content">
+            @foreach (var item in Model)
+            {
+                    <tr class="z">
+                        <td>
+                            <p>@item.User.Nickname</p><br />
+
+                            <img src="@Url.Action("GetImage", "Profile",
+                         new { item.User.Id })" width="90" height="100"><br />
+                            <p>@item.User.NumberOfPosts</p>
+                        </td>
+                        <td>
+                            <p>@item.Message.CreationDate</p>
+                            <p>@item.Message.Text</p>
+                            @if (item.Message.Note != null)
+                            {<p>@item.Message.Note</p>}
+                            @if (User.IsInRole("Administrator") || User.Identity.Name == item.User.Email)
+                            {<a href="/Message/Delete?id=@item.Message.Id">delete</a> <a href="/Message/Edit?id=@item.Message.Id">edit</a>}
+                        </td>
+                    </tr>
+            }
+        </table>
+        <div id="pagingControls"></div>
+    </div>
+    @if (Request.IsAuthenticated)
+    {
+        using (Ajax.BeginForm("NewMessage", new AjaxOptions { }))
+        {
+            <input type="text" name="mess" />
+            <input type="submit" value="Send" id="sendBtn">
+            <input name="id" , value="@ViewData["Id"]" hidden />
+        }
+    }
+</body>
+</html>
+
+

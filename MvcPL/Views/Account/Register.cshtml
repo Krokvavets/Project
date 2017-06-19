@@ -1,0 +1,87 @@
+﻿@model MvcPL.Models.RegisterViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Forum</title>
+    <!-- Bootstrap CSS -->
+    <link href="~/Style/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="~/Style/bootstrap-theme.css" rel="stylesheet">
+    <!-- external css -->
+    <!-- font icon -->
+    <link href="~/Style/elegant-icons-style.css" rel="stylesheet" />
+    <link href="~/Style/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Style/line-icons.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="~/Style/style.css" rel="stylesheet">
+    <link href="~/Style/style-responsive.css" rel="stylesheet" />
+    <link href="~/Style/StyleSheet.css" rel="stylesheet" />
+    <!-- jquery-->
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+</head>
+@{
+    ViewBag.Title = "Register";
+    
+}
+Html.EnableClientValidation(true);
+Html.EnableUnobtrusiveJavaScript(true);
+@using (Html.BeginForm("Register", "Account", FormMethod.Post,
+                                        new { @class = "login-form", role = "form", enctype = "multipart/form-data", id = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div><h4 id="Registrh4">Register</h4></div>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control"})
+            @Html.ValidationMessageFor(m => m.Email, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password)
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Password, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ConfirmPassword)
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ConfirmPassword, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstName)
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.FirstName, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.LastName)
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.LastName, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Nickname)
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Nickname, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Nickname, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <input lang="en" type="file" name="image" accept ="image/*" /><br>
+    </div>
+    <button id="Registr" class="btn btn-default" type="submit" value="Register">Register</button>
+
+}
+</html>

@@ -1,0 +1,7 @@
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\BLL.Interface\bin\Debug\BLL.Interface.dll
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\BLL.Interface\bin\Debug\BLL.Interface.pdb
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\BLL.Interface\obj\Debug\BLL.Interface.csprojResolveAssemblyReference.cache
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\BLL.Interface\obj\Debug\BLL.Interface.dll
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\BLL.Interface\obj\Debug\BLL.Interface.pdb
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\BLL.Interface\bin\Debug\DAL.Interface.dll
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\BLL.Interface\bin\Debug\DAL.Interface.pdb

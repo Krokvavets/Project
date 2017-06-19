@@ -1,0 +1,21 @@
+﻿@model MvcPL.Models.TopicViewModel
+@Html.HiddenFor(model => model.Id)
+    <h2>Delete</h2>
+<dl>
+    <dt>Name</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Name)
+    </dd>
+
+    <dt>Number of posts</dt>
+    <dd>
+        @if (ReferenceEquals(Model.Messages, null)) { <p>0</p>; }
+        else{@Html.DisplayFor(model => model.Messages.Count())}
+    </dd>
+</dl>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete" />
+}
+

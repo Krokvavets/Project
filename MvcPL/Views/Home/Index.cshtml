@@ -1,0 +1,24 @@
+﻿@model List<MvcPL.Models.SectionViewModel>
+@{
+    ViewBag.Title = "Main";
+}
+<html>
+<head>
+    <link href="~/Style/StyleSheet.css" rel="stylesheet" />
+</head>
+<body id="cbody">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <div class="section">
+           <p class="psect">@(Model[i].Name)<br />
+            @if(Request.IsAuthenticated){<a id="acnt" href="/Topic/CreateTopic?sectionId=@Model[i].Id">Create new topic</a>}</p>
+        </div>
+        <div>@foreach (var item in Model[i].Topics) {
+            <a class="psect" href="/Topic/Topic?id=@item.Id">@item.Name</a>
+            if (User.IsInRole("Administrator") || User.IsInRole("Moderator"))
+            {<a id="acnt" href="/Topic/EditTopic?id=@item.Id">edit</a>
+            <a id="acnt" href="/Topic/Delete?id=@item.Id">delet</a>}<br />
+        }</div>
+    }
+</body>
+</html>

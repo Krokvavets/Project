@@ -1,0 +1,84 @@
+﻿@model MvcPL.Models.ProfileViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+<link href="~/Style/StyleSheet.css" rel="stylesheet" />
+<!-- jquery-->
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+Html.EnableClientValidation(true);
+Html.EnableUnobtrusiveJavaScript(true);
+@using (Html.BeginForm("Edit", "Profile", FormMethod.Post,
+                                        new { role = "form", enctype = "multipart/form-data", id = "Editform" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Edit Profile</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.Email)
+        @Html.HiddenFor(model => model.Password)
+        @Html.HiddenFor(model => model.CreationDate)
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control box" } })
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control box" } })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nickname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nickname, new { htmlAttributes = new { @class = "form-control box" } })
+                @Html.ValidationMessageFor(model => model.Nickname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.AboutMe, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AboutMe, new { htmlAttributes = new { @class = "form-control bigbox" } })
+                @Html.ValidationMessageFor(model => model.AboutMe, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+        <input class ="box" lang="en" type="file" name="image" accept ="image/*" /><br>
+    </div>
+        <div class="form-group">
+            <label class="checkbox">
+                <input type="checkbox" value="Administrator" checked = "@Model.Administrator"> Administrator
+                @Html.EditorFor(model => model.Administrator)
+                @Html.ValidationMessageFor(model => model.Administrator, "", new { @class = "text-danger" })
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="Moderator" checked = "@Model.Administrator"> Moderator
+                @Html.EditorFor(model => model.Moderator)
+                @Html.ValidationMessageFor(model => model.Moderator, "", new { @class = "text-danger" })
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" value="User" checked = "@Model.User"> User
+                @Html.EditorFor(model => model.User)
+                @Html.ValidationMessageFor(model => model.User, "", new { @class = "text-danger" })
+            </label>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+}

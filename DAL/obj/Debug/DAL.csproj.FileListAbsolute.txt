@@ -1,0 +1,15 @@
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL\bin\Debug\DAL.dll.config
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL\bin\Debug\DAL.dll
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL\bin\Debug\DAL.pdb
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL\bin\Debug\DAL.Interface.dll
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL\bin\Debug\EntityFramework.dll
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL\bin\Debug\ORM.dll
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL\bin\Debug\ORM.pdb
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL\bin\Debug\ORM.dll.config
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL\bin\Debug\DAL.Interface.pdb
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL\bin\Debug\EntityFramework.xml
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL\obj\Debug\DAL.dll
+C:\Users\jupranec\documents\visual studio 2017\Projects\Forum\DAL\obj\Debug\DAL.pdb
